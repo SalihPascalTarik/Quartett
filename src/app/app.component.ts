@@ -7,8 +7,17 @@ import { Card, CARDS} from "./models/card";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  cards = CARDS;
 
-  cards=CARDS;
+
+
+
+    a = Math.round(Math.random() * 2);
+    b = Math.round(Math.random() * 2);
+
+    if(a=3){
+      a=a-1;
+    }
 
 
 }

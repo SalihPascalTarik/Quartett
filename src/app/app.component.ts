@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Card, CARDS} from "./models/card";
+import {Game} from "./models/game";
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,23 @@ import { Card, CARDS} from "./models/card";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  cards = CARDS;
+  game: Game;
+  cards=CARDS;
 
-
-
-
-    a = Math.round(Math.random() * 2);
-    b = Math.round(Math.random() * 2);
-
-    if(a=3){
-      a=a-1;
+  constructor() {
+    this.game = new Game();
+    console.log(this.game.cards);
+    for(let i=0;i<this.game.cards.length;i++){
+      if(i % 2 == 0){
+        this.game.player1.cardsPlayer.push();
+        console.log(this.game.player1.cardsPlayer)
+      }else{
+        this.game.player2.cardsPlayer.push();
+        console.log(this.game.player2.cardsPlayer)
+      }
     }
 
+
+  }
 
 }

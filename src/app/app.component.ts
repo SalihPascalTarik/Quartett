@@ -10,18 +10,22 @@ import {Game} from "./models/game";
 export class AppComponent {
   game: Game;
   cards=CARDS;
-
+  a=0;
+  b=0;
   constructor() {
     this.game = new Game();
     console.log(this.game.cards);
     for(let i=0;i<this.game.cards.length;i++){
       if(i % 2 == 0){
-        this.game.player1.cardsPlayer.push();
+        this.game.player1.cardsPlayer.push(this.game.cards[i]);
         console.log(this.game.player1.cardsPlayer)
+
       }else{
-        this.game.player2.cardsPlayer.push();
+        this.game.player2.cardsPlayer.push(this.game.cards[i+1]);
         console.log(this.game.player2.cardsPlayer)
+
       }
+
     }
 
 
